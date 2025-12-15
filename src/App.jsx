@@ -23,7 +23,7 @@ function App() {
   const [gameMode, setGameMode] = useState(null); // 'classic' 또는 'openai'
   const [currentPosition, setCurrentPosition] = useState(-1); // -1은 start 위치
   const [messages, setMessages] = useState([
-    { type: 'bot', text: '안녕하세요! 알고리즘 윤리 세계에 오신 것을 환영합니다!\n\n게임 모드를 선택해주세요:\n1️⃣ 기본 시나리오 모드 - 미리 준비된 시나리오를 사용합니다\n2️⃣ OpenAI 동적 시나리오 모드 - AI가 실시간으로 새로운 시나리오를 생성합니다' }
+    { type: 'bot', text: '안녕하세요! 인공지능 윤리 세계에 오신 것을 환영합니다!\n\n게임 모드를 선택해주세요:\n1️⃣ 기본 시나리오 모드 - 미리 준비된 시나리오를 사용합니다\n2️⃣ OpenAI 동적 시나리오 모드 - AI가 실시간으로 새로운 시나리오를 생성합니다' }
   ]);
   const [showOptions, setShowOptions] = useState(false);
   const [currentOptions, setCurrentOptions] = useState([]);
@@ -455,7 +455,7 @@ function App() {
     setGameMode(null);
     setCurrentPosition(-1); // START 위치
     setMessages([
-      { type: 'bot', text: '안녕하세요! 알고리즘 윤리 세계에 오신 것을 환영합니다! 게임 모드를 선택해주세요.' }
+      { type: 'bot', text: '안녕하세요! 인공지능 윤리 세계에 오신 것을 환영합니다! 게임 모드를 선택해주세요.' }
     ]);
     setShowOptions(false);
     setCurrentOptions([]);
@@ -478,7 +478,7 @@ function App() {
       <div className="app-header">
         <div style={{ width: '100px' }}></div>
         <div className="app-header-content">
-          <h1 className="main-title">알고리즘 윤리 세계</h1>
+          <h1 className="main-title">인공지능 윤리 세계</h1>
           <p className="sub-title">Algorithm Ethics World</p>
         </div>
         <div style={{ width: '100px' }}></div>
