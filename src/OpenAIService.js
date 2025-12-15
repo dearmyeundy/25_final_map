@@ -3,6 +3,14 @@
 const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY || '';
 const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
 
+// 디버깅: 환경 변수 로드 확인
+console.log('OpenAI API Key 확인:', {
+  hasKey: !!OPENAI_API_KEY,
+  keyLength: OPENAI_API_KEY?.length || 0,
+  keyPrefix: OPENAI_API_KEY?.substring(0, 7) || '없음',
+  envVar: import.meta.env.VITE_OPENAI_API_KEY ? '설정됨' : '설정 안됨'
+});
+
 /**
  * OpenAI API를 사용하여 윤리적 딜레마 시나리오 생성
  * @param {number} position - 보드판 위치 (1-20)
