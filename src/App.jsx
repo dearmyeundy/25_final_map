@@ -373,6 +373,7 @@ function App() {
     const success = await saveGameData(gameData);
     if (success) {
       addMessage("윤리 장부에 기록되었습니다!");
+      setIsDataSaved(true); // 데이터 저장 완료 상태로 설정
       // 플레이어를 GOAL로 이동 (20번 칸 이후 = GOAL)
       setTimeout(() => {
         setCurrentPosition(20); // GOAL 위치로 이동
@@ -385,6 +386,7 @@ function App() {
 
   // 게임 종료 확인 (20번 칸에 도착하고 답변을 선택한 후, 저장 전)
   const [isGameFinished, setIsGameFinished] = useState(false);
+  const [isDataSaved, setIsDataSaved] = useState(false);
   
   useEffect(() => {
     // 20번 칸에 도착하고 답변을 선택한 후 게임 종료로 간주
@@ -471,6 +473,8 @@ function App() {
       Tech: 50,
     });
     setSelectedRecords([]);
+    setIsGameFinished(false); // 게임 재시작 시 게임 종료 상태 초기화
+    setIsDataSaved(false); // 게임 재시작 시 저장 상태 초기화
   };
 
   return (
@@ -515,6 +519,7 @@ function App() {
             onResetMode={handleResetMode}
             onSaveGameData={handleSaveGameData}
             currentPosition={currentPosition}
+            isDataSaved={isDataSaved}
           />
         </div>
       </div>

@@ -18,7 +18,8 @@ export default function ChatInterface({
   lastSelection,
   onResetMode,
   onSaveGameData,
-  currentPosition
+  currentPosition,
+  isDataSaved
 }) {
   const [inputValue, setInputValue] = useState('');
   const messagesEndRef = useRef(null);
@@ -105,7 +106,7 @@ export default function ChatInterface({
         </div>
       )}
       
-      {isGameFinished && (
+      {isGameFinished && !isDataSaved && (
         <div className="dice-button-container">
           <button
             className="dice-button save-button"
